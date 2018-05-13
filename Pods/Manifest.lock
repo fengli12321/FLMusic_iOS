@@ -1,36 +1,44 @@
 PODS:
   - Alamofire (4.7.0)
   - HandyJSON (4.1.1)
+  - Hero (1.2.0)
   - Kingfisher (4.7.0)
   - ReactiveCocoa (7.1.0):
     - ReactiveSwift (~> 3.1)
   - ReactiveSwift (3.1.0):
     - Result (~> 3.2)
   - Result (3.2.4)
+  - SnapKit (4.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - HandyJSON (~> 4.1.1)
+  - Hero (~> 1.2.0)
   - Kingfisher (~> 4.7.0)
   - ReactiveCocoa
+  - SnapKit (~> 4.0.0)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Alamofire
     - HandyJSON
+    - Hero
     - Kingfisher
     - ReactiveCocoa
     - ReactiveSwift
     - Result
+    - SnapKit
 
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
   HandyJSON: 3a3de917c4118767ffe41c29b5acba23409649f4
+  Hero: 33dadf2cd1c98af71e213dcbc2902e6e03622a4e
   Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
   ReactiveCocoa: 105ad96f6b8711f1ee7d165fc96587479298053b
   ReactiveSwift: 5b26d2e988fe0eed2daf48c4054d1de74db50184
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: 4cb458a71694a31ebf52119fcc03aa91690a6464
+PODFILE CHECKSUM: 842e8b27b7f277382f54a966b08e45368681b2da
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.2
