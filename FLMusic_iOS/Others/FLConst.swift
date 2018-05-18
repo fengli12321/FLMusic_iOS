@@ -23,11 +23,6 @@ func kAutoSize(size: CGFloat) -> CGFloat {
     return size*kScreenWidth/375
 }
 func kFont(size: CGFloat) -> UIFont {
-//    let attributeFontDescriptor = UIFontDescriptor.init(fontAttributes:
-//        [UIFontDescriptor.AttributeName.family : "PingFang SC",
-//         UIFontDescriptor.AttributeName.name : "PingFang SC UItralight",
-//         UIFontDescriptor.AttributeName.size : size])
-//    return UIFont.init(descriptor: attributeFontDescriptor, size: 0.0)
     return UIFont.init(name: "PingFangSC-Ultralight", size: size)!
 }
 

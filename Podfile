@@ -10,6 +10,6 @@ target 'FLMusic_iOS' do
   pod 'Kingfisher', '~> 4.7.0'
   pod 'Hero', '~> 1.2.0'
   pod 'SnapKit', '~> 4.0.0'
-  # Pods for FLMusic_iOS
+  pod 'IQKeyboardManagerSwift', '~> 6.0.2'
 
 end

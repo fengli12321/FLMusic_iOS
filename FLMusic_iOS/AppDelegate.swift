@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,7 +23,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window!.rootViewController = loginVC;
         window!.makeKeyAndVisible()
         
+        self.otherSetting()
+        
         return true
+    }
+    
+    func otherSetting() {
+        UIApplication.shared.statusBarStyle = .lightContent
+        
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+        IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "完成"
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
