@@ -13,13 +13,38 @@ import Result
 
 
 class FLLoginViewController: FLBaseViewController {
-
-    let viewModel = FLLoginViewModel.init()
+    
+    private var userField: UITextField!
+    private var passwordField: UITextField!
+    private var loginBtn: UIButton!
+    
+    private lazy var viewModel: FLLoginViewModel = {
+        return FLLoginViewModel(userField.reactive.continuousTextValues, passwordField.reactive.continuousTextValues)
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-                self.createUI()
+        createUI()
+        bindViewModel()
     }
     
+    func bindViewModel() {
+        loginBtn.reactive.isEnabled <~ viewModel.vaildSignal
+        loginBtn.reactive.backgroundColor <~ viewModel.colorSignal
+        loginBtn.reactive.pressed = CocoaAction<UIButton>.init(viewModel.loginAction){
+            some in
+
+            return (self.userField.text!, self.passwordField.text!)
+        }
+        viewModel.loginAction.values.observeValues { (success) in
+            print("是否成功： \(success)")
+        }
+        
+    }
+    
+    @objc func test() {
+        print("test")
+    }
     // MARK: - UI
     func createUI() {
         // Back
@@ -79,7 +104,7 @@ class FLLoginViewController: FLBaseViewController {
         }
         
         
-        let userField = UITextField.init()
+        userField = UITextField.init()
         inputBack.addSubview(userField)
         userField.snp.makeConstraints { (make) in
             make.left.equalTo(userIcon.snp.right).offset(kAutoSize(size: 10))
@@ -104,7 +129,7 @@ class FLLoginViewController: FLBaseViewController {
             make.centerY.equalTo(inputBack.snp.bottom).multipliedBy(3/4.0)
         }
         
-        let passwordField = UITextField()
+        passwordField = UITextField()
         inputBack.addSubview(passwordField)
         passwordField.snp.makeConstraints { (make) in
             make.left.right.height.equalTo(userField)
@@ -129,7 +154,8 @@ class FLLoginViewController: FLBaseViewController {
     
         
         // login button
-        let loginBtn = UIButton.init(type: .custom)
+        loginBtn = UIButton.init(type: .custom)
+        loginBtn.isEnabled = false
         self.view.addSubview(loginBtn)
         loginBtn.setTitle("登  录", for: .normal)
         loginBtn.titleLabel?.font = kAutoFont(size: 20)
