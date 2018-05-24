@@ -18,6 +18,7 @@
 		120CFC5B20A83B4300100673 /* login_bg3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 120CFC5A20A83B4200100673 /* login_bg3.jpg */; };
 		120CFC5D20A8925D00100673 /* FLImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120CFC5C20A8925D00100673 /* FLImport.swift */; };
 		120CFC5F20A892EA00100673 /* UIColor+FLCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120CFC5E20A892EA00100673 /* UIColor+FLCommon.swift */; };
+		1228184720B6E9FC000F434A /* FLNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1228184620B6E9FC000F434A /* FLNetworkManager.swift */; };
 		74A5BAA86750E0DEF27CAD07 /* Pods_FLMusic_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F8832A2920506E8D2FA4BF /* Pods_FLMusic_iOS.framework */; };
 		983449B720AC006B00BA3951 /* FLBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983449B620AC006B00BA3951 /* FLBaseViewModel.swift */; };
 		98D1AF4A209AB77C00B44715 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D1AF49209AB77C00B44715 /* AppDelegate.swift */; };
@@ -40,6 +41,7 @@
 		120CFC5A20A83B4200100673 /* login_bg3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = login_bg3.jpg; sourceTree = "<group>"; };
 		120CFC5C20A8925D00100673 /* FLImport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLImport.swift; sourceTree = "<group>"; };
 		120CFC5E20A892EA00100673 /* UIColor+FLCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+FLCommon.swift"; sourceTree = "<group>"; };
+		1228184620B6E9FC000F434A /* FLNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLNetworkManager.swift; sourceTree = "<group>"; };
 		19F8832A2920506E8D2FA4BF /* Pods_FLMusic_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FLMusic_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		983449B620AC006B00BA3951 /* FLBaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLBaseViewModel.swift; sourceTree = "<group>"; };
 		98D1AF46209AB77C00B44715 /* FLMusic_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FLMusic_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +137,7 @@
 		120CFC4520A477F900100673 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				1228184620B6E9FC000F434A /* FLNetworkManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				98D1AF4C209AB77D00B44715 /* ViewController.swift in Sources */,
 				120CFC4920A4785600100673 /* FLBaseViewController.swift in Sources */,
 				98D1AF4A209AB77C00B44715 /* AppDelegate.swift in Sources */,
+				1228184720B6E9FC000F434A /* FLNetworkManager.swift in Sources */,
 				983449B720AC006B00BA3951 /* FLBaseViewModel.swift in Sources */,
 				120CFC5F20A892EA00100673 /* UIColor+FLCommon.swift in Sources */,
 				120CFC5D20A8925D00100673 /* FLImport.swift in Sources */,

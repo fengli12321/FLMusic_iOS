@@ -10,13 +10,14 @@ import UIKit
 import ReactiveCocoa
 import ReactiveSwift
 import Result
-
+import Alamofire
 
 class FLLoginViewController: FLBaseViewController {
     
     private var userField: UITextField!
     private var passwordField: UITextField!
     private var loginBtn: UIButton!
+    private var errorLabel: UILabel!
     
     private lazy var viewModel: FLLoginViewModel = {
         return FLLoginViewModel(userField.reactive.continuousTextValues, passwordField.reactive.continuousTextValues)
@@ -25,26 +26,37 @@ class FLLoginViewController: FLBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         createUI()
-        bindViewModel()
+//        bindViewModel()
     }
     
     func bindViewModel() {
+        
+        errorLabel.reactive.text <~ Signal.combineLatest(viewModel.userNameSignal, viewModel.passWordSignal).map({ (username, password) -> String in
+            return (username ?? "").count == 0 ? "请输入用户名" : ((password ?? "").count == 0 ? "请输入密码" : "")
+        })
         loginBtn.reactive.isEnabled <~ viewModel.vaildSignal
         loginBtn.reactive.backgroundColor <~ viewModel.colorSignal
-        loginBtn.reactive.pressed = CocoaAction<UIButton>.init(viewModel.loginAction){
-            some in
-
-            return (self.userField.text!, self.passwordField.text!)
-        }
+//        loginBtn.reactive.pressed = CocoaAction<UIButton>.init(viewModel.loginAction){
+//            [unowned self] some in
+//
+//            return (self.userField.text!, self.passwordField.text!)
+//        }
         viewModel.loginAction.values.observeValues { (success) in
             print("是否成功： \(success)")
         }
-        
+        viewModel.loginAction.errors.observeValues { (_) in
+            print("失败")
+        }
+//        let parameters = ["userName" : "fox123", "password" : "123"]
+//        FLNetworkManager.postRequest(url: "http://192.168.232.121:3000/mobileLogin", parameters: parameters, success: { (response) in
+//            if let response = response as? [String : Any] {
+//                print(response["data"]!)
+//            }
+//        }) { (error) in
+//            print(error.localizedDescription)
+//        }
     }
     
-    @objc func test() {
-        print("test")
-    }
     // MARK: - UI
     func createUI() {
         // Back
@@ -79,13 +91,23 @@ class FLLoginViewController: FLBaseViewController {
             make.top.equalTo(logImage.snp.bottom).offset(kAutoSize(size: 15))
         }
         
+        // error label
+        errorLabel = UILabel()
+        self.view.addSubview(errorLabel)
+        errorLabel.font = kNAutoFont(size: 15)
+        errorLabel.textColor = UIColor.rgbColor(red: 23, green: 200, blue: 23)
+        errorLabel.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(descLabel.snp.bottom).offset(kAutoSize(size: 10))
+        }
+        
         // input back
         let inputBack = UIView.init()
         self.view.addSubview(inputBack)
         inputBack.backgroundColor = UIColor.white.withAlphaComponent(0.3)
         inputBack.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.view)
-            make.top.equalTo(descLabel.snp.bottom).offset(kAutoSize(size: 30))
+            make.top.equalTo(descLabel.snp.bottom).offset(kAutoSize(size: 40))
             make.left.equalTo(self.view).offset(kAutoSize(size: 40))
             make.height.equalTo(kAutoSize(size: kAutoSize(size: 130)))
         }

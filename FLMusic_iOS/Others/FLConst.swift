@@ -25,9 +25,23 @@ func kAutoSize(size: CGFloat) -> CGFloat {
 func kFont(size: CGFloat) -> UIFont {
     return UIFont.init(name: "PingFangSC-Ultralight", size: size)!
 }
+func kNFont(size: CGFloat) -> UIFont {
+    return UIFont.init(name: "PingFangSC-Regular", size: size)!
+}
+func kBFont(size: CGFloat) -> UIFont {
+    return UIFont.init(name: "PingFangSC-Semibold", size: size)!
+}
 
 func kAutoFont(size: CGFloat) -> UIFont {
     return kFont(size: kAutoSize(size: size))
+}
+
+func kNAutoFont(size: CGFloat) -> UIFont {
+    return kNFont(size: kAutoSize(size: size))
+}
+
+func kBAutoFont(size: CGFloat) -> UIFont {
+    return kBFont(size: kAutoSize(size: size))
 }
 
 func isIphoneX() -> Bool {

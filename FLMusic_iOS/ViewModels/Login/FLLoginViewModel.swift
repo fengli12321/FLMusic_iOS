@@ -15,11 +15,12 @@ class FLLoginViewModel: FLBaseViewModel {
     var vaildSignal: Signal<Bool, NoError>
     var colorSignal: Signal<UIColor, NoError>
     var loginAction : Action<(String, String), Bool, NoError>
-
     init(_ signal1: Signal<String?, NoError>, _ signal2: Signal<String?, NoError>) {
         
         userNameSignal = signal1
         passWordSignal = signal2
+        
+      
         vaildSignal = Signal.combineLatest(userNameSignal, passWordSignal).map({
             
             userName, passWord in
