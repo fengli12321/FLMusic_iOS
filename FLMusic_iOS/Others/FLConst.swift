@@ -23,7 +23,7 @@ func kAutoSize(size: CGFloat) -> CGFloat {
     return size*kScreenWidth/375
 }
 func kFont(size: CGFloat) -> UIFont {
-    return UIFont.init(name: "PingFangSC-Ultralight", size: size)!
+    return UIFont(name: "PingFangSC-Ultralight", size: size)!
 }
 
 func kAutoFont(size: CGFloat) -> UIFont {

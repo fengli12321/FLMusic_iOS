@@ -11,14 +11,19 @@ import ReactiveCocoa
 import ReactiveSwift
 import Result
 
+class VendingMachine: <#super class#> {
+    <#code#>
+}
 
 class FLLoginViewController: FLBaseViewController {
 
     let viewModel = FLLoginViewModel.init()
     override func viewDidLoad() {
         super.viewDidLoad()
-                self.createUI()
+        self.createUI()
     }
+    
+
     
     // MARK: - UI
     func createUI() {
@@ -26,8 +31,7 @@ class FLLoginViewController: FLBaseViewController {
         let bgImgView = UIImageView.init(frame: self.view.bounds)
         bgImgView.contentMode = .scaleAspectFill
         self.view .addSubview(bgImgView)
-        var image = UIImage.init(named: "login_bg3.jpg")!
-        image = UIImage.coreBlur(inputImage: image, blurNumber: 8)
+        let image = UIImage.coreBlur(inputImage: #imageLiteral(resourceName: "login_bg3.jpg"), blurNumber: 8)
         bgImgView.image = image
         
         // log
@@ -39,7 +43,7 @@ class FLLoginViewController: FLBaseViewController {
             make.top.equalTo(self.view).offset(kAutoSize(size: 70))
             make.centerX.equalTo(self.view)
         }
-        logImage.image = UIImage.init(named: "login_music_icon")
+        logImage.image = #imageLiteral(resourceName: "login_music_icon")
         
         // desc
         let descLabel = UILabel.init()
@@ -69,7 +73,7 @@ class FLLoginViewController: FLBaseViewController {
         // user name
         
         let userIcon = UIImageView.init()
-        userIcon.image = UIImage.init(named: "login_user")
+        userIcon.image = #imageLiteral(resourceName: "login_user")
         userIcon.contentMode = .scaleAspectFit
         inputBack.addSubview(userIcon)
         userIcon.snp.makeConstraints { (make) in
@@ -96,7 +100,7 @@ class FLLoginViewController: FLBaseViewController {
         
         // pass word
         let passwordIcon = UIImageView()
-        passwordIcon.image = UIImage.init(named: "login_password")
+        passwordIcon.image = #imageLiteral(resourceName: "login_password")
         passwordIcon.contentMode = .scaleAspectFit
         inputBack.addSubview(passwordIcon)
         passwordIcon.snp.makeConstraints { (make) in
