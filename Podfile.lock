@@ -21,7 +21,7 @@ DEPENDENCIES:
   - SnapKit (~> 4.0.0)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Alamofire
     - HandyJSON
     - Hero
@@ -45,4 +45,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 8395fd44a0537928e5dfc1dc512061fe7e9ab84e
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.2
