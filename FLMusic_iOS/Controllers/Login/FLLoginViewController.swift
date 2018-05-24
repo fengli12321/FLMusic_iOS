@@ -25,7 +25,7 @@ class FLLoginViewController: FLBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         createUI()
-//        bindViewModel()
+        bindViewModel()
     }
     
     func bindViewModel() {
@@ -35,25 +35,18 @@ class FLLoginViewController: FLBaseViewController {
         })
         loginBtn.reactive.isEnabled <~ viewModel.vaildSignal
         loginBtn.reactive.backgroundColor <~ viewModel.colorSignal
-//        loginBtn.reactive.pressed = CocoaAction<UIButton>.init(viewModel.loginAction){
-//            [unowned self] some in
-//
-//            return (self.userField.text!, self.passwordField.text!)
-//        }
+        loginBtn.reactive.pressed = CocoaAction<UIButton>.init(viewModel.loginAction){
+            [unowned self] some in
+
+            return (self.userField.text!, self.passwordField.text!)
+        }
         viewModel.loginAction.values.observeValues { (success) in
             print("是否成功： \(success)")
         }
         viewModel.loginAction.errors.observeValues { (_) in
             print("失败")
         }
-//        let parameters = ["userName" : "fox123", "password" : "123"]
-//        FLNetworkManager.postRequest(url: "http://192.168.232.121:3000/mobileLogin", parameters: parameters, success: { (response) in
-//            if let response = response as? [String : Any] {
-//                print(response["data"]!)
-//            }
-//        }) { (error) in
-//            print(error.localizedDescription)
-//        }
+
     }
     
     // MARK: - UI

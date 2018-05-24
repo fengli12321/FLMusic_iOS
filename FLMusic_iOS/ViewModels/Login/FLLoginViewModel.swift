@@ -31,12 +31,17 @@ class FLLoginViewModel: FLBaseViewModel {
             vaild in
             return vaild ? UIColor.red : UIColor.rgbColor(red: 93, green: 82, blue: 90)
         }
+        
+        
         loginAction = Action(enabledIf: loginEnable, execute: { (userName, passWord) -> SignalProducer<Bool, NoError> in
             return SignalProducer<Bool, NoError>{
                 observer, disposable in
-                let success = (userName == "fox") && (passWord == "love")
-                observer.send(value: success)
-                observer.sendCompleted()
+                
+                FLNetworkManager.getRequest(url: "http://www.baidu.com", success: { (response) in
+                    print(response)
+                }, fail: { (error) in
+                    print(error)
+                })
             }
         })
     }
