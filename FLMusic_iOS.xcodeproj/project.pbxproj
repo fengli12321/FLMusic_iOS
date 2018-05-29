@@ -21,11 +21,13 @@
 		1228184720B6E9FC000F434A /* FLNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1228184620B6E9FC000F434A /* FLNetworkManager.swift */; };
 		74A5BAA86750E0DEF27CAD07 /* Pods_FLMusic_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F8832A2920506E8D2FA4BF /* Pods_FLMusic_iOS.framework */; };
 		983449B720AC006B00BA3951 /* FLBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983449B620AC006B00BA3951 /* FLBaseViewModel.swift */; };
+		98615C5320B7A26D00BC4566 /* FLReactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98615C5220B7A26D00BC4566 /* FLReactive.swift */; };
 		98D1AF4A209AB77C00B44715 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D1AF49209AB77C00B44715 /* AppDelegate.swift */; };
 		98D1AF4C209AB77D00B44715 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D1AF4B209AB77D00B44715 /* ViewController.swift */; };
 		98D1AF4F209AB77D00B44715 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98D1AF4D209AB77D00B44715 /* Main.storyboard */; };
 		98D1AF51209AB77E00B44715 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98D1AF50209AB77E00B44715 /* Assets.xcassets */; };
 		98D1AF54209AB77E00B44715 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98D1AF52209AB77E00B44715 /* LaunchScreen.storyboard */; };
+		98D2AC9820BD506B0005BF77 /* FLRigesterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D2AC9720BD506B0005BF77 /* FLRigesterViewController.swift */; };
 		98FB81D320A9C8E400AD8711 /* FLLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FB81D220A9C8E400AD8711 /* FLLoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +46,7 @@
 		1228184620B6E9FC000F434A /* FLNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLNetworkManager.swift; sourceTree = "<group>"; };
 		19F8832A2920506E8D2FA4BF /* Pods_FLMusic_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FLMusic_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		983449B620AC006B00BA3951 /* FLBaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLBaseViewModel.swift; sourceTree = "<group>"; };
+		98615C5220B7A26D00BC4566 /* FLReactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLReactive.swift; sourceTree = "<group>"; };
 		98D1AF46209AB77C00B44715 /* FLMusic_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FLMusic_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98D1AF49209AB77C00B44715 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98D1AF4B209AB77D00B44715 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +54,7 @@
 		98D1AF50209AB77E00B44715 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98D1AF53209AB77E00B44715 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		98D1AF55209AB77E00B44715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98D2AC9720BD506B0005BF77 /* FLRigesterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLRigesterViewController.swift; sourceTree = "<group>"; };
 		98FB81D220A9C8E400AD8711 /* FLLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLLoginViewModel.swift; sourceTree = "<group>"; };
 		9F7887A781D495D43AB55556 /* Pods-FLMusic_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLMusic_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FLMusic_iOS/Pods-FLMusic_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		C756E0BF21D604599474FD23 /* Pods-FLMusic_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FLMusic_iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-FLMusic_iOS/Pods-FLMusic_iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 			children = (
 				120CFC4C20A47A0500100673 /* FLConst.swift */,
 				120CFC5C20A8925D00100673 /* FLImport.swift */,
+				98615C5220B7A26D00BC4566 /* FLReactive.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				120CFC4A20A4788700100673 /* FLLoginViewController.swift */,
+				98D2AC9720BD506B0005BF77 /* FLRigesterViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -374,6 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98615C5320B7A26D00BC4566 /* FLReactive.swift in Sources */,
 				120CFC4B20A4788700100673 /* FLLoginViewController.swift in Sources */,
 				120CFC5220A4845D00100673 /* FLAlertView.swift in Sources */,
 				120CFC5720A8124000100673 /* UIImage+FLCommon.swift in Sources */,
@@ -383,6 +390,7 @@
 				98D1AF4C209AB77D00B44715 /* ViewController.swift in Sources */,
 				120CFC4920A4785600100673 /* FLBaseViewController.swift in Sources */,
 				98D1AF4A209AB77C00B44715 /* AppDelegate.swift in Sources */,
+				98D2AC9820BD506B0005BF77 /* FLRigesterViewController.swift in Sources */,
 				1228184720B6E9FC000F434A /* FLNetworkManager.swift in Sources */,
 				983449B720AC006B00BA3951 /* FLBaseViewModel.swift in Sources */,
 				120CFC5F20A892EA00100673 /* UIColor+FLCommon.swift in Sources */,

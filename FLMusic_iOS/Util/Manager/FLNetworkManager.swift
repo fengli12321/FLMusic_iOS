@@ -34,7 +34,6 @@ class FLNetworkManager {
                     fail(error)
                 }
             }
-            
         }
     }
     

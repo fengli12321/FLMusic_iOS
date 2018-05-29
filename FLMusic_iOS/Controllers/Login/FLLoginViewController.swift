@@ -17,6 +17,7 @@ class FLLoginViewController: FLBaseViewController {
     private var passwordField: UITextField!
     private var loginBtn: UIButton!
     private var errorLabel: UILabel!
+    private var registerTip: UIButton!
     
     private lazy var viewModel: FLLoginViewModel = {
         return FLLoginViewModel(userField.reactive.continuousTextValues, passwordField.reactive.continuousTextValues)
@@ -34,19 +35,28 @@ class FLLoginViewController: FLBaseViewController {
             return (username ?? "").count == 0 ? "请输入用户名" : ((password ?? "").count == 0 ? "请输入密码" : "")
         })
         loginBtn.reactive.isEnabled <~ viewModel.vaildSignal
-        loginBtn.reactive.backgroundColor <~ viewModel.colorSignal
-        loginBtn.reactive.pressed = CocoaAction<UIButton>.init(viewModel.loginAction){
-            [unowned self] some in
-
-            return (self.userField.text!, self.passwordField.text!)
+        loginBtn.reactive.backgroundColor <~ viewModel.btnColor
+//        loginBtn.reactive.pressed = CocoaAction<UIButton>.init(viewModel.loginAction){
+//            [unowned self] some in
+//
+//            return (self.userField.text!, self.passwordField.text!)
+//        }
+        
+        // 登录
+        loginBtn.reactive.controlEvents(UIControlEvents.touchUpInside).observeValues { (button) in
+            self.viewModel.loginAction.apply((self.userField.text!, self.passwordField.text!)).start()
         }
         viewModel.loginAction.values.observeValues { (success) in
             print("是否成功： \(success)")
         }
-        viewModel.loginAction.errors.observeValues { (_) in
-            print("失败")
+        viewModel.loginAction.errors.observeValues { (error) in
+            print("失败  code:\(error.code)  msg:\(error.msg)")
         }
 
+        // 注册
+        registerTip.reactive.controlEvents(.touchUpInside).observeValues { [unowned self](button) in
+            self.present(FLRigesterViewController(), animated: true, completion: nil)
+        }
     }
     
     // MARK: - UI
@@ -180,12 +190,9 @@ class FLLoginViewController: FLBaseViewController {
             make.top.equalTo(inputBack.snp.bottom).offset(kAutoSize(size: 20))
         }
         loginBtn.layer.cornerRadius = kAutoSize(size: 10)
-        loginBtn.reactive.controlEvents(.touchUpInside).observeValues { (button) in
-            print("登录事件")
-        }
         
         // register tip
-        let registerTip = UIButton.init(type: .custom)
+        registerTip = UIButton.init(type: .custom)
         registerTip.setTitle("没有账号？", for: .normal)
         registerTip .setTitleColor(UIColor.white, for: .normal)
         registerTip.titleLabel?.font = kAutoFont(size: 15)
@@ -193,9 +200,6 @@ class FLLoginViewController: FLBaseViewController {
         registerTip.snp.makeConstraints { (make) in
             make.left.equalTo(loginBtn)
             make.top.equalTo(loginBtn.snp.bottom).offset(kAutoSize(size: 15))
-        }
-        registerTip.reactive.controlEvents(.touchUpInside).observeValues { (button) in
-            print("没有账号")
         }
         
         // forget password

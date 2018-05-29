@@ -47,3 +47,5 @@ func kBAutoFont(size: CGFloat) -> UIFont {
 func isIphoneX() -> Bool {
     return kScreenHeight == 812
 }
+
+
