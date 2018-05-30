@@ -19,8 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow.init(frame: UIScreen.main.bounds)
         window!.backgroundColor = UIColor.white
-        let loginVC: FLLoginViewController = FLLoginViewController.init();
-        window!.rootViewController = loginVC;
+//        let loginVC: FLLoginViewController = FLLoginViewController.init();
+//        window!.rootViewController = loginVC;
+        window?.rootViewController = FLTabBarViewController()
         window!.makeKeyAndVisible()
         
         self.otherSetting()
@@ -29,11 +30,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func otherSetting() {
-        UIApplication.shared.statusBarStyle = .lightContent
         
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "完成"
+        
+        UINavigationBar.appearance().barTintColor = UIColor.hexColor(hex: 0x121223)
+        UINavigationBar.appearance().tintColor = .white
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

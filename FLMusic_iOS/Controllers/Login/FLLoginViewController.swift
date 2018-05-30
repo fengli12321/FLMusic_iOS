@@ -50,13 +50,13 @@ class FLLoginViewController: FLBaseViewController {
         let registerVaildSignal = Signal.combineLatest(rUserField.reactive.continuousTextValues, rPasswordField1.reactive.continuousTextValues, rPasswordField2.reactive.continuousTextValues).map { (userName, password1, password2) -> String in
             var error = ""
             if (userName ?? "").count == 0 {
-                error = "请输入用户名1"
+                error = "请输入用户名"
             } else if (password1 ?? "").count == 0 {
-                error = "请输入密码1"
+                error = "请输入密码"
             } else if (password2 ?? "").count == 0 {
-                error = "请验证密码1"
+                error = "请验证密码"
             } else if password1! != password2! {
-                error = "两次输入密码不一致1"
+                error = "两次输入密码不一致"
             }
             return error
         }
