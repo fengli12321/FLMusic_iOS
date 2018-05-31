@@ -8,24 +8,24 @@
 
 import UIKit
 
-class FLFindViewController: FLBaseViewController {
+class FLFindViewController: FLBaseViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        creatUI()
     }
 
-    func creatUI() {
-//        let searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: 200, height: 30))
-//        searchBar.placeholder = "找一首好听的歌曲"
-        let searchBar = UIView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 30))
-        searchBar.backgroundColor = UIColor.red
-        self.navigationItem.titleView = searchBar
+    override func createUI() {
         
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .search, target: self, action: nil)
+        let searchView = FLSearchView(frame: CGRect(x: 0, y: 0, width: kScreenWidth*2.0/3.0, height: 30))
+        searchView.placeholder = "搜索"
+        searchView.delegate = self
+        self.navigationItem.titleView = searchView
         
-        let search = UISearchBar(frame: CGRect(x: 0, y: 100, width: 200, height: 30))
-        search.placeholder = "找一首好听的歌曲"
-        self.view.addSubview(search)
+    }
+    
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        self.navigationController?.pushViewController(FLSearchViewController(), animated: false)
+        return false
     }
 }

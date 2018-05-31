@@ -13,9 +13,12 @@ class FLBaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = backColor
-        // Do any additional setup after loading the view.
+        createUI()
     }
 
+    func createUI() {
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -27,6 +27,7 @@
 		74A5BAA86750E0DEF27CAD07 /* Pods_FLMusic_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F8832A2920506E8D2FA4BF /* Pods_FLMusic_iOS.framework */; };
 		983449B720AC006B00BA3951 /* FLBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983449B620AC006B00BA3951 /* FLBaseViewModel.swift */; };
 		98615C5320B7A26D00BC4566 /* FLReactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98615C5220B7A26D00BC4566 /* FLReactive.swift */; };
+		9891E81320BFE7E400F88D4C /* FLSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9891E81220BFE7E400F88D4C /* FLSearchViewController.swift */; };
 		98D1AF4A209AB77C00B44715 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D1AF49209AB77C00B44715 /* AppDelegate.swift */; };
 		98D1AF4C209AB77D00B44715 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D1AF4B209AB77D00B44715 /* ViewController.swift */; };
 		98D1AF4F209AB77D00B44715 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98D1AF4D209AB77D00B44715 /* Main.storyboard */; };
@@ -56,6 +57,7 @@
 		19F8832A2920506E8D2FA4BF /* Pods_FLMusic_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FLMusic_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		983449B620AC006B00BA3951 /* FLBaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLBaseViewModel.swift; sourceTree = "<group>"; };
 		98615C5220B7A26D00BC4566 /* FLReactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLReactive.swift; sourceTree = "<group>"; };
+		9891E81220BFE7E400F88D4C /* FLSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLSearchViewController.swift; sourceTree = "<group>"; };
 		98D1AF46209AB77C00B44715 /* FLMusic_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FLMusic_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98D1AF49209AB77C00B44715 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98D1AF4B209AB77D00B44715 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				12B8FC1520BED8AD000D7024 /* FLFindViewController.swift */,
+				9891E81220BFE7E400F88D4C /* FLSearchViewController.swift */,
 			);
 			path = Find;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 				12B8FC1120BED202000D7024 /* FLNavigationController.swift in Sources */,
 				120CFC5F20A892EA00100673 /* UIColor+FLCommon.swift in Sources */,
 				120CFC5D20A8925D00100673 /* FLImport.swift in Sources */,
+				9891E81320BFE7E400F88D4C /* FLSearchViewController.swift in Sources */,
 				12B8FC1B20BEED92000D7024 /* FLSearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

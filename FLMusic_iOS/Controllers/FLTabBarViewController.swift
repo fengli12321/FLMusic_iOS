@@ -13,8 +13,10 @@ class FLTabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        self.tabBar.tintColor = UIColor.hexColor(hex: 0x3c3c3c)
         self.tabBar.barTintColor = UIColor.hexColor(hex: 0x121223)
+        
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor : UIColor.darkGray], for: .normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor : UIColor.white], for: .selected)
         
         
         addViewController(vc: FLFindViewController(), title: "测试", normalIcon: "nil", selectIcon: "nil")

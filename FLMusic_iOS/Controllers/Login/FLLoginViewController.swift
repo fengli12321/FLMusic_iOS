@@ -38,7 +38,6 @@ class FLLoginViewController: FLBaseViewController {
     // MARK: Life Circle
     override func viewDidLoad() {
         super.viewDidLoad()
-        createUI()
         bindViewModel()
     }
     // MARK: - private
@@ -114,7 +113,7 @@ class FLLoginViewController: FLBaseViewController {
     }
     
     // MARK: - UI
-    func createUI() {
+    override func createUI() {
         // Back
         let bgImgView = UIImageView.init(frame: self.view.bounds)
         bgImgView.contentMode = .scaleAspectFill
