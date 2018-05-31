@@ -32,7 +32,7 @@ class FLLoginViewController: FLBaseViewController {
     private var viewState = 0   // 0 为登录视图 1 为注册视图
     
     private lazy var viewModel: FLLoginViewModel = {
-        return FLLoginViewModel(userField.reactive.continuousTextValues, passwordField.reactive.continuousTextValues)
+        return FLLoginViewModel(userField.reactive.continuousTextValues, passwordField.reactive.continuousTextValues, rUserField.reactive.continuousTextValues, rPasswordField1.reactive.continuousTextValues, rPasswordField2.reactive.continuousTextValues)
     }()
     
     // MARK: Life Circle
@@ -44,32 +44,16 @@ class FLLoginViewController: FLBaseViewController {
     // MARK: - private
     func bindViewModel() {
         
-        let loginVaildSignal = Signal.combineLatest(viewModel.userNameSignal, viewModel.passWordSignal).map({ (username, password) -> String in
-            return (username ?? "").count == 0 ? "请输入用户名" : ((password ?? "").count == 0 ? "请输入密码" : "")
-        })
-        let registerVaildSignal = Signal.combineLatest(rUserField.reactive.continuousTextValues, rPasswordField1.reactive.continuousTextValues, rPasswordField2.reactive.continuousTextValues).map { (userName, password1, password2) -> String in
-            var error = ""
-            if (userName ?? "").count == 0 {
-                error = "请输入用户名1"
-            } else if (password1 ?? "").count == 0 {
-                error = "请输入密码1"
-            } else if (password2 ?? "").count == 0 {
-                error = "请验证密码1"
-            } else if password1! != password2! {
-                error = "两次输入密码不一致1"
-            }
-            return error
-        }
-    
-        errorLabel.reactive.text <~ Signal.merge(loginVaildSignal, registerVaildSignal)
-        
+        // 错误信息
+        errorLabel.reactive.text <~ viewModel.errorTip
+        // 登录按钮可点击
         loginBtn.reactive.isEnabled <~ viewModel.vaildSignal
+        // 登录按钮颜色
         loginBtn.reactive.backgroundColor <~ viewModel.btnColor
-//        loginBtn.reactive.pressed = CocoaAction<UIButton>.init(viewModel.loginAction){
-//            [unowned self] some in
-//
-//            return (self.userField.text!, self.passwordField.text!)
-//        }
+        
+        // 注册按钮
+        registerBtn.reactive.isEnabled <~ viewModel.rVaildSignal
+        registerBtn.reactive.backgroundColor <~ viewModel.rBtnColor
         
         // 登录
         loginBtn.reactive.controlEvents(UIControlEvents.touchUpInside).observeValues { (button) in
@@ -79,6 +63,15 @@ class FLLoginViewController: FLBaseViewController {
             print("是否成功： \(success)")
         }
         viewModel.loginAction.errors.observeValues { (error) in
+            print("失败  code:\(error.code)  msg:\(error.msg)")
+        }
+        
+        // 注册
+        registerBtn.reactive.pressed = CocoaAction(viewModel.registerAction, input: (self.userField.text!, self.rPasswordField1.text!))
+        viewModel.registerAction.values.observeValues { (success) in
+            print("是否成功： \(success)")
+        }
+        viewModel.registerAction.errors.observeValues { (error) in
             print("失败  code:\(error.code)  msg:\(error.msg)")
         }
 
@@ -94,9 +87,11 @@ class FLLoginViewController: FLBaseViewController {
         }
     }
     
+    // 切换注册界面
     func gotoRegister() -> Void {
         if viewState == 0 {
             viewState = 1
+            errorLabel.text = ""
             UIView.animate(withDuration: 0.5) {
                 
                 self.loginBack.x = -kScreenWidth
@@ -105,9 +100,11 @@ class FLLoginViewController: FLBaseViewController {
         }
     }
     
+    // 切换登录界面
     func gotoLogin() -> Void {
         if viewState == 1 {
             viewState = 0
+            errorLabel.text = ""
             UIView.animate(withDuration: 0.5) {
                 self.loginBack.x = 0
                 self.registerBack.x = kScreenWidth
@@ -351,8 +348,8 @@ class FLLoginViewController: FLBaseViewController {
         goToLoginBtn.setTitleColor(UIColor.white, for: .normal)
         goToLoginBtn.titleLabel?.font = registerTip.titleLabel?.font
         goToLoginBtn.snp.makeConstraints { (make) in
-            make.right.equalTo(rInputBack)
-            make.bottom.equalTo(rInputBack.snp.top)
+            make.centerX.equalTo(rInputBack)
+            make.top.equalTo(registerBtn.snp.bottom)
         }
     }
     
