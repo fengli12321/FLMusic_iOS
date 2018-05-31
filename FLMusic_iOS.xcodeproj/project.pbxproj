@@ -19,6 +19,11 @@
 		120CFC5D20A8925D00100673 /* FLImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120CFC5C20A8925D00100673 /* FLImport.swift */; };
 		120CFC5F20A892EA00100673 /* UIColor+FLCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120CFC5E20A892EA00100673 /* UIColor+FLCommon.swift */; };
 		1228184720B6E9FC000F434A /* FLNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1228184620B6E9FC000F434A /* FLNetworkManager.swift */; };
+		12B8FC0F20BED15F000D7024 /* FLTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B8FC0E20BED15F000D7024 /* FLTabBarViewController.swift */; };
+		12B8FC1120BED202000D7024 /* FLNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B8FC1020BED202000D7024 /* FLNavigationController.swift */; };
+		12B8FC1620BED8AD000D7024 /* FLFindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B8FC1520BED8AD000D7024 /* FLFindViewController.swift */; };
+		12B8FC1920BEE7BD000D7024 /* FLColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B8FC1820BEE7BD000D7024 /* FLColors.swift */; };
+		12B8FC1B20BEED92000D7024 /* FLSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B8FC1A20BEED92000D7024 /* FLSearchView.swift */; };
 		74A5BAA86750E0DEF27CAD07 /* Pods_FLMusic_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F8832A2920506E8D2FA4BF /* Pods_FLMusic_iOS.framework */; };
 		983449B720AC006B00BA3951 /* FLBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983449B620AC006B00BA3951 /* FLBaseViewModel.swift */; };
 		98615C5320B7A26D00BC4566 /* FLReactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98615C5220B7A26D00BC4566 /* FLReactive.swift */; };
@@ -43,6 +48,11 @@
 		120CFC5C20A8925D00100673 /* FLImport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLImport.swift; sourceTree = "<group>"; };
 		120CFC5E20A892EA00100673 /* UIColor+FLCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+FLCommon.swift"; sourceTree = "<group>"; };
 		1228184620B6E9FC000F434A /* FLNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLNetworkManager.swift; sourceTree = "<group>"; };
+		12B8FC0E20BED15F000D7024 /* FLTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLTabBarViewController.swift; sourceTree = "<group>"; };
+		12B8FC1020BED202000D7024 /* FLNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLNavigationController.swift; sourceTree = "<group>"; };
+		12B8FC1520BED8AD000D7024 /* FLFindViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLFindViewController.swift; sourceTree = "<group>"; };
+		12B8FC1820BEE7BD000D7024 /* FLColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLColors.swift; sourceTree = "<group>"; };
+		12B8FC1A20BEED92000D7024 /* FLSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLSearchView.swift; sourceTree = "<group>"; };
 		19F8832A2920506E8D2FA4BF /* Pods_FLMusic_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FLMusic_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		983449B620AC006B00BA3951 /* FLBaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLBaseViewModel.swift; sourceTree = "<group>"; };
 		98615C5220B7A26D00BC4566 /* FLReactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLReactive.swift; sourceTree = "<group>"; };
@@ -74,7 +84,12 @@
 			isa = PBXGroup;
 			children = (
 				120CFC4820A4785600100673 /* FLBaseViewController.swift */,
+				12B8FC1020BED202000D7024 /* FLNavigationController.swift */,
+				12B8FC0E20BED15F000D7024 /* FLTabBarViewController.swift */,
 				120CFC4720A4784500100673 /* Login */,
+				12B8FC1220BED84E000D7024 /* Find */,
+				12B8FC1320BED859000D7024 /* Me */,
+				12B8FC1420BED85F000D7024 /* Acount */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -131,6 +146,7 @@
 		120CFC4420A477D000100673 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				12B8FC1720BEE7A2000D7024 /* Values */,
 				120CFC4620A4780200100673 /* Category */,
 				120CFC4520A477F900100673 /* Manager */,
 			);
@@ -167,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				120CFC5120A4845D00100673 /* FLAlertView.swift */,
+				12B8FC1A20BEED92000D7024 /* FLSearchView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -179,6 +196,36 @@
 				120CFC5A20A83B4200100673 /* login_bg3.jpg */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		12B8FC1220BED84E000D7024 /* Find */ = {
+			isa = PBXGroup;
+			children = (
+				12B8FC1520BED8AD000D7024 /* FLFindViewController.swift */,
+			);
+			path = Find;
+			sourceTree = "<group>";
+		};
+		12B8FC1320BED859000D7024 /* Me */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
+		12B8FC1420BED85F000D7024 /* Acount */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Acount;
+			sourceTree = "<group>";
+		};
+		12B8FC1720BEE7A2000D7024 /* Values */ = {
+			isa = PBXGroup;
+			children = (
+				12B8FC1820BEE7BD000D7024 /* FLColors.swift */,
+			);
+			path = Values;
 			sourceTree = "<group>";
 		};
 		70ED81138F9C4878F5C2FE04 /* Pods */ = {
@@ -377,20 +424,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12B8FC0F20BED15F000D7024 /* FLTabBarViewController.swift in Sources */,
 				98615C5320B7A26D00BC4566 /* FLReactive.swift in Sources */,
 				120CFC4B20A4788700100673 /* FLLoginViewController.swift in Sources */,
 				120CFC5220A4845D00100673 /* FLAlertView.swift in Sources */,
 				120CFC5720A8124000100673 /* UIImage+FLCommon.swift in Sources */,
+				12B8FC1920BEE7BD000D7024 /* FLColors.swift in Sources */,
 				120CFC4D20A47A0500100673 /* FLConst.swift in Sources */,
 				98FB81D320A9C8E400AD8711 /* FLLoginViewModel.swift in Sources */,
 				120CFC4F20A480BB00100673 /* UIView+FLCommon.swift in Sources */,
 				98D1AF4C209AB77D00B44715 /* ViewController.swift in Sources */,
 				120CFC4920A4785600100673 /* FLBaseViewController.swift in Sources */,
 				98D1AF4A209AB77C00B44715 /* AppDelegate.swift in Sources */,
+				12B8FC1620BED8AD000D7024 /* FLFindViewController.swift in Sources */,
 				1228184720B6E9FC000F434A /* FLNetworkManager.swift in Sources */,
 				983449B720AC006B00BA3951 /* FLBaseViewModel.swift in Sources */,
+				12B8FC1120BED202000D7024 /* FLNavigationController.swift in Sources */,
 				120CFC5F20A892EA00100673 /* UIColor+FLCommon.swift in Sources */,
 				120CFC5D20A8925D00100673 /* FLImport.swift in Sources */,
+				12B8FC1B20BEED92000D7024 /* FLSearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

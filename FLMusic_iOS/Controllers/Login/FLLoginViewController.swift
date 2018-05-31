@@ -43,10 +43,11 @@ class FLLoginViewController: FLBaseViewController {
     }
     // MARK: - private
     func bindViewModel() {
-        
+
         // 错误信息
         errorLabel.reactive.text <~ viewModel.errorTip
         // 登录按钮可点击
+
         loginBtn.reactive.isEnabled <~ viewModel.vaildSignal
         // 登录按钮颜色
         loginBtn.reactive.backgroundColor <~ viewModel.btnColor
