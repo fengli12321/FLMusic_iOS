@@ -9,3 +9,4 @@
 import UIKit
 
 let backColor = UIColor.hexColor(hex: 0x181824)
+let sepColor = UIColor.hexColor(hex: 0x999999)

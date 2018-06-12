@@ -24,7 +24,7 @@ class FLSearchView: UITextField {
         backgroundColor = UIColor.white.withAlphaComponent(0.3)
         layer.cornerRadius = height/2.0
         
-        let searchImage = UIImageView(image: #imageLiteral(resourceName: "home_search"))
+        let searchImage = UIImageView(image: UIImage(named: "home_search")?.withRenderingMode(.alwaysOriginal))
         leftView = searchImage
         leftViewMode = .always
     }

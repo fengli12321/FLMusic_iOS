@@ -28,6 +28,8 @@
 		983449B720AC006B00BA3951 /* FLBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983449B620AC006B00BA3951 /* FLBaseViewModel.swift */; };
 		98615C5320B7A26D00BC4566 /* FLReactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98615C5220B7A26D00BC4566 /* FLReactive.swift */; };
 		9891E81320BFE7E400F88D4C /* FLSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9891E81220BFE7E400F88D4C /* FLSearchViewController.swift */; };
+		9891E81520C0E62B00F88D4C /* FLMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9891E81420C0E62B00F88D4C /* FLMeViewController.swift */; };
+		9891E81720C0E63800F88D4C /* FLAcountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9891E81620C0E63800F88D4C /* FLAcountViewController.swift */; };
 		98D1AF4A209AB77C00B44715 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D1AF49209AB77C00B44715 /* AppDelegate.swift */; };
 		98D1AF4C209AB77D00B44715 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D1AF4B209AB77D00B44715 /* ViewController.swift */; };
 		98D1AF4F209AB77D00B44715 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98D1AF4D209AB77D00B44715 /* Main.storyboard */; };
@@ -58,6 +60,8 @@
 		983449B620AC006B00BA3951 /* FLBaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLBaseViewModel.swift; sourceTree = "<group>"; };
 		98615C5220B7A26D00BC4566 /* FLReactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLReactive.swift; sourceTree = "<group>"; };
 		9891E81220BFE7E400F88D4C /* FLSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLSearchViewController.swift; sourceTree = "<group>"; };
+		9891E81420C0E62B00F88D4C /* FLMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLMeViewController.swift; sourceTree = "<group>"; };
+		9891E81620C0E63800F88D4C /* FLAcountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLAcountViewController.swift; sourceTree = "<group>"; };
 		98D1AF46209AB77C00B44715 /* FLMusic_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FLMusic_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98D1AF49209AB77C00B44715 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98D1AF4B209AB77D00B44715 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -212,6 +216,7 @@
 		12B8FC1320BED859000D7024 /* Me */ = {
 			isa = PBXGroup;
 			children = (
+				9891E81420C0E62B00F88D4C /* FLMeViewController.swift */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -219,6 +224,7 @@
 		12B8FC1420BED85F000D7024 /* Acount */ = {
 			isa = PBXGroup;
 			children = (
+				9891E81620C0E63800F88D4C /* FLAcountViewController.swift */,
 			);
 			path = Acount;
 			sourceTree = "<group>";
@@ -431,6 +437,7 @@
 				98615C5320B7A26D00BC4566 /* FLReactive.swift in Sources */,
 				120CFC4B20A4788700100673 /* FLLoginViewController.swift in Sources */,
 				120CFC5220A4845D00100673 /* FLAlertView.swift in Sources */,
+				9891E81720C0E63800F88D4C /* FLAcountViewController.swift in Sources */,
 				120CFC5720A8124000100673 /* UIImage+FLCommon.swift in Sources */,
 				12B8FC1920BEE7BD000D7024 /* FLColors.swift in Sources */,
 				120CFC4D20A47A0500100673 /* FLConst.swift in Sources */,
@@ -445,6 +452,7 @@
 				12B8FC1120BED202000D7024 /* FLNavigationController.swift in Sources */,
 				120CFC5F20A892EA00100673 /* UIColor+FLCommon.swift in Sources */,
 				120CFC5D20A8925D00100673 /* FLImport.swift in Sources */,
+				9891E81520C0E62B00F88D4C /* FLMeViewController.swift in Sources */,
 				9891E81320BFE7E400F88D4C /* FLSearchViewController.swift in Sources */,
 				12B8FC1B20BEED92000D7024 /* FLSearchView.swift in Sources */,
 			);
